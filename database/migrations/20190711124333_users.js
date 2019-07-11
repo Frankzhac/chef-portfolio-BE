@@ -16,7 +16,7 @@ exports.up = function(knex, Promise) {
        user
          .string('address', 100)
          .notNullable()
-         .unique();
+         
 
        user
          .string('city', 100)
@@ -25,12 +25,12 @@ exports.up = function(knex, Promise) {
        user
          .string('state', 100)
          .notNullable()
-         .unique();
+         
 
        user
          .string('zip code', 255)
          .notNullable()
-         .unique();
+         
          
        user
          .string('password', 255)

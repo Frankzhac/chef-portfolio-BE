@@ -30,17 +30,15 @@ function register(req, res) {
     newUser.password = hash;
     db("users")
         .insert(newUser)
-        .then(res => {
-            res
-                .status(200)
-                .json({
+        .then(response => {
+            res.status(200).json({
                     message: "New account created successfully."
                 });
         })
         .catch(error => {
             res.status(500).json({
                 message: "There was an error creating the new account",
-                error
+                error: error.message
             });
         });
 }
