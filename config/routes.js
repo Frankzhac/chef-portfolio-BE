@@ -30,7 +30,7 @@ function register(req, res) {
     newUser.password = hash;
     db("users")
         .insert(newUser)
-        .then(response => {
+        .then(res => {
             res
                 .status(200)
                 .json({
