@@ -78,13 +78,13 @@ function getRecipes(req, res) {
     };
 
     axios
-        .get('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/{id}/summary', requestOptions)
+        .get('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/4632/summary', requestOptions)
         .then(response => {
             res.status(200).json(response.data.results);
         })
         .catch(err => {
             res.status(500).json({
-                message: 'Error Fetching Jokes',
+                message: 'Error Fetching recipes',
                 error: err
             });
         });

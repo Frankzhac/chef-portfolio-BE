@@ -14,7 +14,7 @@ function generateToken(user) {
     };
 
     const options = {
-        expiredIn: '1d'
+        expiresIn: '1d'
     };
 
 
