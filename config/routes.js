@@ -73,12 +73,15 @@ function login(req, res) {
 function getRecipes(req, res) {
     const requestOptions = {
         headers: {
-            accept: 'application/json'
+            accept: 'application/json',
+            // "X-RapidAPI-Host": 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+            // "X-RapidAPI-Key": '1bf8a85985mshc932ac662acd79cp1a7abbjsn42e6fe031add',
+            // "key": 'b28ebdabb9ff88cc5f8371b54e03c91e'
         },
     };
 
     axios
-        .get('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/4632/summary', requestOptions)
+        .get('https://community-food2fork.p.rapidapi.com/get', requestOptions)
         .then(response => {
             res.status(200).json(response.data.results);
         })
